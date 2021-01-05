@@ -3,7 +3,7 @@ github:
     multitenant:
       mongo:
         properties:
-					- tenant: in
+          - tenant: in
             properties:
               uri: mongo://github.com
               database: rolemanagerdb_in

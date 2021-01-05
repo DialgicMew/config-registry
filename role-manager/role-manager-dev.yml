@@ -1,10 +1,10 @@
 github:
-	config:
-		multitenant:
-			mongo:
-				properties:
-					- tenant: in
-            properties:
+  config:
+    multitenant:
+      mongo:
+        properties:
+          - tenant: in
+          properties:
               uri: mongo://github.com
               database: rolemanagerdb_in
             basePackages: com.example.config

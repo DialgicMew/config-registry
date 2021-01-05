@@ -1,9 +1,9 @@
 github:
-	config:
-		multitenant:
-			mongo:
-				properties:
-					- tenant: in
+  config:
+    multitenant:
+      mongo:
+        properties:
+          - tenant: in
             properties:
               uri: mongo://github.com
               database: rolemanagerdb_in

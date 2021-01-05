@@ -4,7 +4,7 @@ github:
       mongo:
         properties:
           - tenant: in
-          properties:
+            properties:
               uri: mongo://github.com
               database: rolemanagerdb_in
             basePackages: com.example.config

@@ -1,8 +1,8 @@
 github:
-	config:
-		multitenant:
-			mongo:
-				properties:
+  config:
+    multitenant:
+      mongo:
+        properties:
 					- tenant: in
             properties:
               uri: mongo://github.com

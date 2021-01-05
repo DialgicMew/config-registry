@@ -1,0 +1,18 @@
+github:
+	config:
+		multitenant:
+			mongo:
+				properties:
+					- tenant: in
+            properties:
+              uri: mongo://github.com
+              database: rolemanagerdb_in
+            basePackages: com.example.config
+          - tenant: pk
+            properties:
+              uri: mongo://gitlab.com
+              database: rolemanagerdb_pk
+            basePackages: com.example.config
+    transaction:
+      mongo:
+        enabled: true

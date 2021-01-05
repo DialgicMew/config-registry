@@ -1,0 +1,15 @@
+github:
+	config:
+		multitenant:
+			mongo:
+				properties:
+					- tenant: in
+            properties:
+              uri: mongo://github.com
+              database: rolemanagerdb_in
+            basePackages: com.example.config
+          - tenant: au
+            properties:
+              uri: mongo://gitlab.com
+              database: rolemanagerdb_au
+            basePackages: com.example.config

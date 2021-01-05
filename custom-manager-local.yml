@@ -1,9 +1,9 @@
 spring:
-	datasource:
-		url: localhost:8080/capmag
-		username: ashish
-		password: gopal
-	jpa:
-		properties:
-			hibernate:
-				general_statistics: true
+  datasource:
+    url: localhost:8080/capmag
+    username: ashish
+    password: gopal
+    jpa:
+      properties:
+        hibernate:
+          general_statistics: true

@@ -1,5 +1,5 @@
 spring:
-	datasource:
-		url: localhost:8080/capmag
-		username: ashish
-		password: gopal
+  datasource:
+    url: localhost:8080/capmag
+    username: ashish
+    password: gopal

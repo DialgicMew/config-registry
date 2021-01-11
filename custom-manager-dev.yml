@@ -1,5 +1,9 @@
 spring:
   datasource:
+    array:
+      - ashish
+      - gopal
+      - hattimare
     url: localhost:8080/capmag
     username: ashish
     password: gopal

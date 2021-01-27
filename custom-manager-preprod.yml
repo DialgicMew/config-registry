@@ -1,7 +1,56 @@
-spring:
-  datasource:
-    url: localhost:8080/capmag
-    username: ashish
-    password: gopal
-
-    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+zuul:
+  ignored-services: '*'
+  prefix: /config
+  routes:
+    role-manager:
+      path: /role-manager/**
+      configId: role-manager
+    custom-manager:
+      path: /custom-manager/**
+      configId: custom-manager
+zone:
+  config:
+    country:
+      management:
+        countries:
+          INDIA: in
+          GERMANY: ge
+          HUNGARY: hu
+    redirection:
+      dev:
+        job-manager:
+          url: http://config-tool/dev/role-manager.git
+        config-manager:
+          url: http://config-tool/dev/role-manager.git
+      test:
+        job-manager:
+          url: http://config-tool/test/role-manager.git
+        config-manager:
+          url: http://config-tool/test/role-manager.git
+      preprod:
+        job-manager:
+          url: http://config-tool/preprod/role-manager.git
+        config-manager:
+          url: http://config-tool/preprod/role-manager.git
+    client:
+      - country: in
+        type: custom
+        username: in-user
+        password: ps-user
+      - country: pk
+        type: custom
+        username: pk-user
+        password: pk-user
+      - country: au
+        type: custom
+        token: token-au
+    callback:
+      callBackUrl:
+        in: http//git.com
+        au: http//git.com
+        pk: http//git.com

@@ -7,35 +7,35 @@ zuul:
   ignored-services: '*'
   prefix: /config
   routes:
-    role-manager:
-      path: /role-manager/**
-      configId: role-manager
     dev-manager:
       path: /custom-manager/**
       configId: custom-manager
+    role-manager:
+      path: /role-manager/**
+      configId: role-manager
 zone:
   config:
-    country:
-      management:
-        countries:
-          - eu
-          - in
     redirection:
-      dev:
-        job-manager:
-          url: http://config-tool/dev/role-manager.git
-        config-manager:
-          url: http://config-tool/dev/role-manager.git
-      test:
-        job-manager:
-          url: http://config-tool/test/role-manager.git
-        config-manager:
-          url: http://config-tool/test/role-manager.git
       prod:
         job-manager:
           url: http://config-tool/preprod/role-manager.git
         config-manager:
           url: http://config-tool/preprod/role-manager.git
+      dev:
+        config-manager:
+          url: http://config-tool/dev/role-manager.git
+        job-manager:
+          url: http://config-tool/dev/role-manager.git
+      test:
+        config-manager:
+          url: http://config-tool/test/role-manager.git
+        job-manager:
+          url: http://config-tool/test/role-manager.git
+    country:
+      management:
+        countries:
+          - eu
+          - in
     client:
       - country: in
         type: custom

@@ -1,10 +1,10 @@
 mongo:
   properties:
-    in:
-      name: in
-      code: 91
-      id: 123
     cz:
       name: czech
       code: cz
       id: 12
+    in:
+      name: in
+      code: 91
+      id: 123

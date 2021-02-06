@@ -6,5 +6,5 @@ mongo:
       id: 123
     cz:
       name: czech
-      code: cz
+      code: CZ
       id: 12

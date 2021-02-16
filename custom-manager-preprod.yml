@@ -8,14 +8,19 @@ zuul:
   prefix: /config
   routes:
     dev-manager:
-      configId: custom-manager
       path: /custom-manager/**
+      configId: custom-manager
     role-manager:
-      configId: role-manager
       path: /role-manager/**
+      configId: role-manager
 zone:
   config:
     redirection:
+      prod:
+        job-manager:
+          url: http://config-tool/preprod/role-manager.git
+        config-manager:
+          url: http://config-tool/preprod/role-manager.git
       dev:
         config-manager:
           url: http://config-tool/dev/role-manager.git
@@ -26,17 +31,16 @@ zone:
           url: http://config-tool/test/role-manager.git
         job-manager:
           url: http://config-tool/test/role-manager.git
-      prod:
-        job-manager:
-          url: http://config-tool/preprod/role-manager.git
-        config-manager:
-          url: http://config-tool/preprod/role-manager.git
     country:
       management:
         countries:
           - eu
           - in
     client:
+      - country: in
+        type: custom
+        username: in-user
+        password: ps-user
       - country: pk
         type: custom
         username: pk-user
@@ -44,12 +48,8 @@ zone:
       - country: au
         type: custom
         token: token-au
-      - country: in
-        type: custom
-        username: in-user
-        password: ps-user
 
     callback:
       callBackUrl:
-        au: http//git.com
         zl: http//git.com
+        au: http//git.com

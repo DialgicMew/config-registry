@@ -16,7 +16,7 @@ zuul:
 zone:
   config:
     redirection:
-     dev:
+      dev:
         config-manager:
           url: http://config-tool/dev/role-manager.git
         job-manager:

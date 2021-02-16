@@ -1,10 +1,55 @@
-mongo:
-  properties:
-    cz:
-      name: czech
-      code: cz
-      id: 12
-    in:
-      name: in
-      code: 91
-      id: 123
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+zuul:
+  ignored-services: '*'
+  prefix: /config
+  routes:
+    dev-manager:
+      configId: custom-manager
+      path: /custom-manager/**
+    role-manager:
+      configId: role-manager
+      path: /role-manager/**
+zone:
+  config:
+    redirection:
+     dev:
+        config-manager:
+          url: http://config-tool/dev/role-manager.git
+        job-manager:
+          url: http://config-tool/dev/role-manager.git
+      test:
+        config-manager:
+          url: http://config-tool/test/role-manager.git
+        job-manager:
+          url: http://config-tool/test/role-manager.git
+      prod:
+        job-manager:
+          url: http://config-tool/preprod/role-manager.git
+        config-manager:
+          url: http://config-tool/preprod/role-manager.git
+    country:
+      management:
+        countries:
+          - eu
+          - in
+    client:
+      - country: pk
+        type: custom
+        username: pk-user
+        password: pk-user
+      - country: au
+        type: custom
+        token: token-au
+      - country: in
+        type: custom
+        username: in-user
+        password: ps-user
+
+    callback:
+      callBackUrl:
+        au: http//git.com
+        zl: http//git.com

@@ -1,0 +1,5 @@
+mongo:
+  properties:
+    duration: 8
+    name: ashish
+    level: L1

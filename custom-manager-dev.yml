@@ -1,7 +1,7 @@
 spring:
   datasource:
     url: localhost:8080/capmag
-    username: ashish
+    username: rajat
 management:
   endpoints:
     web:

@@ -6,7 +6,7 @@ dt:
           - tenant: pl
             properties:
               uri: mongodb://localhost:27017/devicemanagerdb_pl
-              database: devicemanagerdb_pl
+              database: 2
             basePackages: com.project.multitenant.repository
           - tenant: cz
             properties:
@@ -17,6 +17,7 @@ dt:
         supportedTenants:
           - pl
           - cz
+          - ab
         tenantHeaders:
           - X-TENANT-ID
       feign:
@@ -27,4 +28,4 @@ dt:
             name: some-service
 eureka:
   instance:
-    expire-duration: 3
+    expire-duration: 0

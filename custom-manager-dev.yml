@@ -1,5 +1,30 @@
-spring:
-  datasource:
-    url: localhost:8080/capmag
-    username: ashish
-    password: gopal
+dt:
+  config:
+    multitenant:
+      mongo:
+        properties:
+          - tenant: pl
+            properties:
+              uri: mongodb://localhost:27017/devicemanagerdb_pl
+              database: devicemanagerdb_pl
+            basePackages: com.project.multitenant.repository
+          - tenant: cz
+            properties:
+              uri: mongodb://localhost:27017/devicemanagerdb_cz
+              database: devicemanagerdb_cz
+            basePackages: com.project.multitenant.repository
+      tenant:
+        supportedTenants:
+          - pl
+          - cz
+        tenantHeaders:
+          - X-TENANT-ID
+      feign:
+        properties:
+          defaults:
+            enabled: true
+            interval: 10
+            name: some-service
+eureka:
+  instance:
+    expire-duration: 3

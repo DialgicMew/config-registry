@@ -28,4 +28,4 @@ dt:
             name: some-service
 eureka:
   instance:
-    expire-duration: 0
+    expire-duration: 5

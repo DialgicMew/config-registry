@@ -1,0 +1,19 @@
+dt:
+  config:
+    multitenant:
+      tenant:
+        supportedTenants:
+          - pl
+          - cz
+          - ab
+        tenantHeaders:
+          - X-TENANT-ID
+      feign:
+        properties:
+          defaults:
+            enabled: true
+            interval: 10
+            name: some-service
+eureka:
+  instance:
+    expire-duration: 0

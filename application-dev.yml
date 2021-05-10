@@ -1,18 +1,6 @@
 dt:
   config:
     multitenant:
-      mongo:
-        properties:
-          - tenant: pl
-            properties:
-              uri: mongodb://localhost:27017/devicemanagerdb_pl
-              database: 2
-            basePackages: com.project.multitenant.repository
-          - tenant: cz
-            properties:
-              uri: mongodb://localhost:27017/devicemanagerdb_cz
-              database: devicemanagerdb_cz
-            basePackages: com.project.multitenant.repository
       tenant:
         supportedTenants:
           - pl

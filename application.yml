@@ -20,6 +20,7 @@ dt:
             enabled: true
             interval: 10
             name: some-service
+            qwe: asas
 eureka:
   instance:
     expire-duration: 0
